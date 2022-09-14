@@ -50,9 +50,9 @@ public class GlobalExceptionHandler {
 		 return new ResponseEntity<>("please change httpmethod!!", HttpStatus.METHOD_NOT_ALLOWED);
 	 }
 	@ExceptionHandler(value = InvalidCustomeExcetion.class )
-	public ResponseEntity<Object> exception(InvalidCustomeExcetion exception)
+	public ApiResponse exception(InvalidCustomeExcetion exception)
 	{
-		return new ResponseEntity<>("Invalid Details", HttpStatus.NOT_FOUND);
+		return new ApiResponse(HttpStatus.NOT_FOUND.value(),"Invalid Details");
 	}
 	
 	
